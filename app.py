@@ -23,5 +23,9 @@ if shuffle_button:
     deck.shuffle()
 st.image([card.image for card in deck.cards], width=card_width)
 
+give_card = st.button("Give")
 
+if give_card:
+    deck.give()
+st.image([card.image for card in deck.cards], width=card_width)
 
