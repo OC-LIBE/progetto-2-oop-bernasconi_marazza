@@ -15,13 +15,14 @@ deck = Deck(number_of_decks)
 
 st.markdown(f"## Deck created with {number_of_decks} deck/s")
 
-st.image([card.image for card in deck.cards], width=card_width)
+#st.image([card.image for card in deck.cards], width=card_width)
 
 st.markdown("## Shuffling deck")
 shuffle_button = st.button("Shuffle")
 if shuffle_button:
     deck.shuffle()
 st.image([card.image for card in deck.cards], width=card_width)
+st.image(Card.flipped("2C"), width = card_width)
 
 give_card = st.button("Give")
 

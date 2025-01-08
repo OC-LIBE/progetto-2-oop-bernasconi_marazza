@@ -1,5 +1,5 @@
 class Card:
-    def __init__(self, rank, suit, flipped = True):
+    def __init__(self, rank, suit):
         self.rank = rank
         self.suit = suit
         if self.rank == 1:
@@ -34,6 +34,7 @@ class Card:
 
     @property
     def image(self):
-        if self.flipped == False:
-            return 'static/images/back.png'
         return self.image_location
+    
+    def flipped(self):
+        return 'static/images/flipped.png'
