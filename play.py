@@ -30,3 +30,6 @@ if give_card:
     deck.give()
 st.image([card.image for card in deck.cards], width=card_width)
 
+home = st.button("Home", use_container_width= True)
+if home:
+    st.switch_page("home.py")
