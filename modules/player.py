@@ -1,10 +1,17 @@
-class player:
-    def __init__(self, money):
-        self.money= 1000
+from modules.card import Card
+from modules.deck import Deck
+import streamlit as st
+
+class Player:
+    def __init__(self, hand = [], money= 1000):
+        self.hand = hand
+        self.money= money
     
-    def give(self):
-        if len(self.cards) == 0:
+    def draw(self, deck):
+        if len(deck) == []:
             return False
-        give_cards = self.cards[0,5]
-        self.cards.remove(self.cards[0,5])
-        return give_cards
+        else:
+            carta = [deck[0], deck[2]]
+            self.hand.append([deck[0], deck[2]])
+            deck.remove([deck[0], deck[2]])
+            return carta
