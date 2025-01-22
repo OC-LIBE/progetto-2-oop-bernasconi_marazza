@@ -4,3 +4,4 @@ Abbiamo creato una home page dove abbiamo messo il nome del gioco (Black Jack) e
 
 # 22.01
 ## Samuele Marazza
+Oggi abbiamo creato le classi del Game, Human, e espanso le funzioni del giocatore rispetto all' ultima volta: mettendo le funzioni check_score, fold e migliorato la funziona che pesca una carta, che purtroppo non funziona ancora
