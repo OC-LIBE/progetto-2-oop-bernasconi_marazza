@@ -29,15 +29,15 @@ if shuffle_button:
 start = st.button("Start")
 if start:
     deck = Deck(4)
-    deck.shuffle()
+    deck = deck.shuffle()
     player = Player()
-    player.hand.extend(list(player.draw(deck.cards)))
+    st.session_state(player.hand_draw(deck))
     st.image([card.image for card in player.hand], width=card_width)
 draw_card = st.button("Draw")
 
-player = Player()
-st.write(player.draw(deck.cards))
-st.image([card.image for card in player.hands], width=card_width)
+#player = Player()
+#player.draw(deck)
+#st.image([card.image for card in player.hands], width=card_width)
 
 home = st.button("Home", use_container_width= True)
 if home:

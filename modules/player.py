@@ -3,15 +3,15 @@ from modules.deck import Deck
 import streamlit as st
 
 class Player:
-    def __init__(self, hand = [], money= 1000):
+    def __init__(self, name = "Player", hand = []):
+        self.name = name
         self.hand = hand
-        self.money= money
     
-    def draw(self, deck):
-        if len(deck) == []:
-            return False
-        else:
-            carta = [deck[0], deck[2]]
-            self.hand.append([deck[0], deck[2]])
-            deck.remove([deck[0], deck[2]])
-            return carta
+    def hand_draw(self, deck = object):
+        cards = [deck.cards[0], deck.cards[2]]
+        self.hand.append(cards)
+        deck.remove(cards)
+        return self.hand
+        
+    def fold(self, hand):
+        self.hand = []
