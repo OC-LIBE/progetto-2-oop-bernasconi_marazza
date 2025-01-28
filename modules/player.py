@@ -10,7 +10,6 @@ class Player:
     def hand_draw(self, deck):
         cards = deck.draw()
         self.hand.append(cards)
-        deck.remove(cards)
         return self.hand
         
     def fold(self, hand):

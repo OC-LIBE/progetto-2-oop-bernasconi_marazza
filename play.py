@@ -29,18 +29,29 @@ if shuffle_button:
     st.image([card.image for card in st.session_state.deck.cards], width=card_width)
     st.image(Card.flipped("2C"), width = card_width)
 
-
-start = st.button("Start")
-if start:
-    deck =st.session_state.deck
-    human = Human(Player())
- 
-    if 'human' not in st.session_state:
-        st.session_state['Human'] = human
+if "playing" not in st.session_state:
+    st.session_state["playing"] = True
+if st.session_state["playing"]:
+    start = st.button("Start")
+    if start:
+        st.session_state["playing"] = False
+        deck = st.session_state.deck
+        human = Human(Player())
     
-    human.hand_draw(deck)
-    st.image([card.image for card in human.hand], width=card_width)
-draw_card = st.button("Draw")
+        if 'Human' not in st.session_state:
+            st.session_state['Human'] = human
+        
+        deck.shuffle()
+        human.hand_draw(deck)
+        human.hand_draw(deck)
+        st.image([card.image for card in human.hand], width=card_width)
+
+        if "draw_card" not in st.session_state:
+            st.session_state["draw_card"] = "True"
+        while st.session_state["draw_card"] == True:
+            draw = st.button("draw_card")
+            if draw:
+                human.hand_draw(deck)
 
 #player = Player()
 #player.draw(deck)
