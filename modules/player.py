@@ -27,4 +27,11 @@ class Human(Player):
         super().__init__(name = "Player", hand = [])
         self.money = money
 
-
+    def bet(self, bettings, win=bool):
+        self.money = self.money - bettings
+        win = True or False
+        if win == True:
+            self.money = self.money + bettings*2
+        if win == False:
+            self.money= self.money
+    
