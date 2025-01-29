@@ -5,3 +5,7 @@ Abbiamo creato una home page dove abbiamo messo il nome del gioco (Black Jack) e
 # 22.01
 ## Samuele Marazza
 Oggi abbiamo creato le classi del Game, Human, e espanso le funzioni del giocatore rispetto all' ultima volta: mettendo le funzioni check_score, fold e migliorato la funziona che pesca una carta, che purtroppo non funziona ancora
+
+# 29.01
+## Lidia Bernasconi
+Abbiamo creato la classe Dealer; adesso funziona la funzione per dare le carte, la mano iniziale la dà ma non riusciamo ad aggiungere altre carte. Abbiamo fatto la funzione per la scommessa e quella select.slider per scegliere quanto puntare, ma non sappiamo se funziona perché scompare dopo aver selezionata la puntata.
