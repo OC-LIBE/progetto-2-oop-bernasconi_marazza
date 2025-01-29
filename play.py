@@ -37,9 +37,14 @@ if st.session_state["playing"]:
         st.session_state["playing"] = False
         deck = st.session_state.deck
         human = Human(Player())
-    
         if 'Human' not in st.session_state:
             st.session_state['Human'] = human
+        if "bet" not in st.session_state:
+            st.session_state["bet"] = st.select_slider("Puntata", options=range(1,(human.money + 1)), value= (human.money + 1)//2,)
+            human.bet = st.session_state["bet"]
+
+
+        
         
         deck.shuffle()
         human.hand_draw(deck)
@@ -47,10 +52,8 @@ if st.session_state["playing"]:
         st.image([card.image for card in human.hand], width=card_width)
 
         if "draw_card" not in st.session_state:
-            st.session_state["draw_card"] = "True"
-        while st.session_state["draw_card"] == True:
-            draw = st.button("draw_card")
-            if draw:
+            st.session_state["draw_card"] = st.button("draw_card")
+        if st.session_state["draw_card"]:
                 human.hand_draw(deck)
 
 #player = Player()

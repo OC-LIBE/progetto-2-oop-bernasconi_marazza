@@ -23,15 +23,28 @@ class Player:
     
 
 class Human(Player):
-    def __init__(self, name = "Player", hand = [], money = 1000):
+    def __init__(self, name = "Player", hand = [], money = 1000, bet = 0):
         super().__init__(name = "Player", hand = [])
         self.money = money
-
-    def bet(self, bettings, win=bool):
-        self.money = self.money - bettings
-        win = True or False
-        if win == True:
-            self.money = self.money + bettings*2
-        if win == False:
-            self.money= self.money
+        self.bet = 0
     
+    def bet(self, bettings, win = bool):
+        self.money = self.money - bettings
+        if win == True:
+            self.money += bettings * 2
+            if win == False:
+                self.money = self.money
+            
+
+class Dealer(Player):
+    def __init__(self, name = "Player", hand = [], flipped = True):
+        super().__init__(name = "Player", hand = [])
+
+    def draw(self, deck):
+        score1 = 0
+        score2 = 0
+        for i in self.hand:
+            score1 += i[0]
+            score2 += i[1]
+        while score1 < 17 and score2 <17:
+            self.hand.append(deck.draw())
