@@ -28,12 +28,14 @@ class Human(Player):
         self.money = money
         self.bet = 0
     
-    def bet(self, bettings, win = bool):
+    def puntata(self, bettings):
         self.money = self.money - bettings
+
+    def ritorno(self, bettings, win = bool):
         if win == True:
             self.money += bettings * 2
-            if win == False:
-                self.money = self.money
+        if win == False:
+            self.money = self.money
             
 
 class Dealer(Player):

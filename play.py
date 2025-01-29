@@ -1,7 +1,8 @@
 import streamlit as st
 from modules.card import Card
 from modules.deck import Deck
-from modules.player import Player, Human
+from modules.player import Player, Human, Dealer
+from modules.game import Game
 
 st.set_page_config(
    layout="wide",
@@ -35,26 +36,22 @@ if st.session_state["playing"]:
     start = st.button("Start")
     if start:
         st.session_state["playing"] = False
-        deck = st.session_state.deck
-        human = Human(Player())
+        game = Game()
         if 'Human' not in st.session_state:
-            st.session_state['Human'] = human
+            st.session_state['Human'] = game.human
+        if "game" not in st.session_state:
+            st.session_state["game"] = game
         if "bet" not in st.session_state:
-            st.session_state["bet"] = st.select_slider("Puntata", options=range(1,(human.money + 1)), value= (human.money + 1)//2,)
-            human.bet = st.session_state["bet"]
+            st.session_state["bet"] = st.select_slider("Puntata", options=range(1,(game.human.money + 1)), value= (game.human.money + 1)//2,)
+            bet = st.session_state["bet"]
 
-
-        
-        
-        deck.shuffle()
-        human.hand_draw(deck)
-        human.hand_draw(deck)
-        st.image([card.image for card in human.hand], width=card_width)
+        game.first_turn(bet)
+        st.image([card.image for card in game.human.hand], width=card_width)
 
         if "draw_card" not in st.session_state:
             st.session_state["draw_card"] = st.button("draw_card")
         if st.session_state["draw_card"]:
-                human.hand_draw(deck)
+                game.human.hand_draw(game.deck)
 
 #player = Player()
 #player.draw(deck)
