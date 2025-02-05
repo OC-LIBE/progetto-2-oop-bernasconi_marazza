@@ -11,6 +11,8 @@ st.write("Il giocatore può scegliere se pescare una carta dal mazzo e quante vo
 st.write("Quando il giocatore ha finito il turno, tocca al banco, che a sua volta decide se e quante volte pescare.")
 st.write("Il banco vince se arriva più vicino a 21 ripetto al giocatore o se questo supera il 21. Mentre il giocatore vince se il banco supera il 21 o non raggiunge il 17, oppure se è il più vicino a 21.")
 
+name = st.text_input("name:")
+
 gioca = st.button("Gioca", use_container_width= True)
 if gioca:
     st.switch_page("play.py")
