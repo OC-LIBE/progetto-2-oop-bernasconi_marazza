@@ -12,3 +12,4 @@ Abbiamo creato la classe Dealer; adesso funziona la funzione per dare le carte, 
 
 # 05.02
 ## Samuele Marazza
+Oggi abbiamo capito che il metodo di lavoro non era ottimale, ci siamo quindi concentrati a modificare il codice e tutte le diverse funzioni con lo scopo di mettere a posto la parte teorica del gioco; una volta finito questo proveremo a sviluppare la grafica.
