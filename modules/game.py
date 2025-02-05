@@ -4,16 +4,22 @@ from modules.deck import Deck
 from modules.player import Player, Human, Dealer
 
 class Game:
-    def __init__(self, deck, human, dealer):
-        self.deck = Deck(6).shuffle()
-        self.human = Human(Player())
-        self.dealer = Dealer(Player())
+    def __init__(self):
+        self.deck = Deck(6)
+        self.human = Human()
+        self.dealer = Dealer()
     
-    def second_turn(self, human, dealer, deck):
-        human.hand_draw(deck)
-        dealer.hand_draw(deck)
-        human.hand_draw(deck)
-        dealer.hand_draw(deck)
-    
-    def first_turn(self, human, deck, bet):
-        human.puntata(bet)
+    def humandeal(self):
+        self.human.hand_draw(self.deck)
+
+    def dealerdeal(self):
+        self.dealer.hand.append(self.deck.draw())
+
+    def first_turn(self, bet):
+        self.human.puntata(bet)
+
+    def second_turn(self):
+        self.human.hand_draw(self.deck)
+        self.dealer.hand_draw(self.deck)
+        self.human.hand_draw(self.deck)
+        self.dealer.hand_draw(self.deck)

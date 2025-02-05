@@ -16,14 +16,18 @@ class Player:
         self.hand = []
 
     def check_score(self):
-        score = 0
+        score1 = 0
+        score2 = 0
         for i in self.hand:
-            score += i
-        return score
-    
+            score1 += i[0]
+            score2 += i[1]
+        if score1 <= score2:
+            return score2
+        else:
+            return score1
 
 class Human(Player):
-    def __init__(self, name = "Player", hand = [], money = 1000, bet = 0):
+    def __init__(self, name = "Human", hand = [], money = 1000, bet = 0):
         super().__init__(name = "Player", hand = [])
         self.money = money
         self.bet = 0
@@ -39,7 +43,7 @@ class Human(Player):
             
 
 class Dealer(Player):
-    def __init__(self, name = "Player", hand = [], flipped = True):
+    def __init__(self, name = "Dealer", hand = [], flipped = True):
         super().__init__(name = "Player", hand = [])
 
     def draw(self, deck):

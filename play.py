@@ -17,7 +17,14 @@ if 'deck' not in st.session_state:
     st.session_state.deck=Deck(number_of_decks)
 
 
-
+@st.dialog("Bet!")
+def bet():
+    print("BEtting")
+    st.write(f"How much do you want to bet?")
+    bet = st.text_input("Bet: ")
+    if st.button("Submit"):
+        #st.session_state.bet = {"bet": bet}
+        st.rerun()
 
 st.markdown(f"## Deck created with {number_of_decks} deck/s")
 
@@ -41,17 +48,30 @@ if st.session_state["playing"]:
             st.session_state['Human'] = game.human
         if "game" not in st.session_state:
             st.session_state["game"] = game
-        if "bet" not in st.session_state:
-            st.session_state["bet"] = st.select_slider("Puntata", options=range(1,(game.human.money + 1)), value= (game.human.money + 1)//2,)
-            bet = st.session_state["bet"]
+        
 
-        game.first_turn(bet)
+        if "bet" not in st.session_state:
+            st.session_state.bet=10
+
+        punta = st.button("Bet")
+        if punta:
+            print("bET button clicked")
+            bet()
+        else:
+            game.first_turn(st.session_state.bet)
+            game.second_turn(st.session_state.deck)
+            st.image([card.image for card in game.dealer.hand], width=card_width)
+            st.image([card.image for card in game.human.hand], width=card_width)
+        
+
+        
+
         st.image([card.image for card in game.human.hand], width=card_width)
 
-        if "draw_card" not in st.session_state:
-            st.session_state["draw_card"] = st.button("draw_card")
-        if st.session_state["draw_card"]:
-                game.human.hand_draw(game.deck)
+        #if "draw_card" not in st.session_state:
+        #    st.session_state["draw_card"] = st.button("draw_card")
+        #if st.session_state["draw_card"]:
+        #        game.human.hand_draw(game.deck)
 
 #player = Player()
 #player.draw(deck)
