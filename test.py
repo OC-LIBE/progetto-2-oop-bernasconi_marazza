@@ -1,5 +1,6 @@
 from modules.game import Game
 
 game = Game()
-game.humandeal()
+game.deck.shuffle()
+game.humandeal(2)
 print(game.human.hand)

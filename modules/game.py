@@ -9,11 +9,13 @@ class Game:
         self.human = Human()
         self.dealer = Dealer()
     
-    def humandeal(self):
-        self.human.hand_draw(self.deck)
+    def humandeal(self, rang):
+        for i in range(rang):
+            self.human.hand.append(self.deck.draw())
 
-    def dealerdeal(self):
-        self.dealer.hand.append(self.deck.draw())
+    def dealerdeal(self,rang):
+        for i in range(rang):
+            self.human.hand.append(self.deck.draw())
 
     def first_turn(self, bet):
         self.human.puntata(bet)

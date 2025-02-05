@@ -9,3 +9,6 @@ Oggi abbiamo creato le classi del Game, Human, e espanso le funzioni del giocato
 # 29.01
 ## Lidia Bernasconi
 Abbiamo creato la classe Dealer; adesso funziona la funzione per dare le carte, la mano iniziale la dà ma non riusciamo ad aggiungere altre carte. Abbiamo fatto la funzione per la scommessa e quella select.slider per scegliere quanto puntare, ma non sappiamo se funziona perché scompare dopo aver selezionata la puntata.
+
+# 05.02
+## Samuele Marazza
