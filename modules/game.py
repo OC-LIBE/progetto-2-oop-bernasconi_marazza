@@ -23,3 +23,6 @@ class Game:
         self.dealer.hand_draw(self.deck)
         self.human.hand_draw(self.deck)
         self.dealer.hand_draw(self.deck)
+
+    def bet(self, bettings):
+        self.bet = bettings
