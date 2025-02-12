@@ -15,16 +15,6 @@ class Player:
     def fold(self, hand):
         self.hand = []
 
-    def check_score(self):
-        score1 = 0
-        score2 = 0
-        for i in self.hand:
-            score1 += i[0]
-            score2 += i[1]
-        if score1 <= score2:
-            return score2
-        else:
-            return score1
 
 class Human(Player):
     def __init__(self, name = "Human", hand = [], money = 1000, bet = 0):
@@ -35,11 +25,6 @@ class Human(Player):
     def puntata(self, bettings):
         self.money = self.money - bettings
 
-    def ritorno(self, bettings, win = bool):
-        if win == True:
-            self.money += bettings * 2
-        if win == False:
-            self.money = self.money
             
 
 class Dealer(Player):
