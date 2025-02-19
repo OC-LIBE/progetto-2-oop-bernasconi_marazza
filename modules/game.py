@@ -1,7 +1,6 @@
-import streamlit as st
-from card import Card
-from deck import Deck
-from player import Player, Human, Dealer
+from modules.card import Card
+from modules.deck import Deck
+from modules.player import Player, Human, Dealer
 
 class Game:
     def __init__(self,fake = False, win = False, pari = False):

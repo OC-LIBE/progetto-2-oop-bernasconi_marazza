@@ -17,3 +17,7 @@ Oggi abbiamo capito che il metodo di lavoro non era ottimale, ci siamo quindi co
 # 12.02
 ## Lidia Bernasconi
 Oggi abbiamo testato le funzioni bet e deal, e abbiamo messo a posto la funzione check_score per calcolare i punti usando il valore degli assi in base al valore necessario.
+
+# 19.02
+##  Samuele Marazza
+Abbiamo completato la parte di codice del gioco e riusciamo a giocare attraverso il terminale: abbiamo creato le funzioni che controllano la vittoria, restituiscono i soldi, resettano le mani e una per giocare. Abbiamo poi iniziato a guardare l'interfaccia con streamlit
