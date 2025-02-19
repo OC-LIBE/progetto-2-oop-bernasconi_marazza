@@ -12,7 +12,7 @@ class Player:
         self.hand.append(cards)
         return self.hand
         
-    def fold(self, hand):
+    def fold(self):
         self.hand = []
 
 

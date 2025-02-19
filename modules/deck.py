@@ -15,8 +15,8 @@ class Deck:
 
     def create(self, number_of_decks, fake = False):
         if fake:
-            self.cards = [Card(1, "Spades"),Card(1, "Spades"),Card(1, "Spades"), 
-                         Card(6, "Spades"),Card(1, "Spades"),Card(1, "Spades"),Card(1, "Spades")]
+            self.cards = [Card(6, "Spades"),Card(6, "Spades"),Card(6, "Spades"), 
+                         Card(6, "Spades"),Card(10, "Spades"),Card(10, "Spades"),Card(6, "Spades")]
         else:
             decks = [Card(rank, suit) for suit in suits for rank in range(1, 14)
                  for deck in range(number_of_decks)]
