@@ -20,7 +20,7 @@ Oggi abbiamo testato le funzioni bet e deal, e abbiamo messo a posto la funzione
 
 # 19.02
 ##  Samuele Marazza
-Abbiamo completato la parte di codice del gioco e riusciamo a giocare attraverso il terminale: abbiamo creato le funzioni che controllano la vittoria, restituiscono i soldi, resettano le mani e una per giocare. Abbiamo poi iniziato a guardare l'interfaccia con streamlit
+Abbiamo completato la parte di codice del gioco e riusciamo a giocare attraverso il terminale: abbiamo creato le funzioni che controllano la vittoria, restituiscono i soldi, resettano le mani e una per giocare. Abbiamo poi iniziato a guardare l'interfaccia con streamlit.
 
 # 26.02
 ## Lidia Bernasconi

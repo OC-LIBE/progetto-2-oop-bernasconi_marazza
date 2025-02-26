@@ -3,12 +3,13 @@ from modules.deck import Deck
 from modules.player import Player, Human, Dealer
 
 class Game:
-    def __init__(self,fake = False, win = False, pari = False):
+    def __init__(self,fake = False, win = False, pari = False, bet = None):
         self.deck = Deck(6, fake)
         self.human = Human()
         self.dealer = Dealer()
         self.win = win
         self.pari = pari
+        self.bet = bet
     def humandeal(self):
         cards = self.deck.draw()
         self.human.hand.append(cards)
@@ -46,6 +47,7 @@ class Game:
             self.human.money += self.bet * 2
         elif self.win == False:
             self.human.money = self.human.money
+        self.bet = None
         
     def check_score(self):
         scorehuman = 0
