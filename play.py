@@ -16,9 +16,14 @@ card_width=95
 
 
 if "game" not in st.session_state:
-    game = st.session_state.game = Game()
+    st.session_state.game = Game()
+    st.session_state.game.deck.shuffle()
+game = st.session_state.game
 
-game.deck.shuffle()
+
+    
+    
+
 
 if "playing" not in st.session_state:
         st.session_state["playing"] = False
@@ -44,17 +49,16 @@ if st.session_state["playing"]:
         st.write(game.human.money, game.bet)
         st.session_state["playing"] = False
         st.session_state.second = True
-        
-if st.session_state.second: 
-    st.session_state.second = False       
-    game.second_turn()
+        game.second_turn()
+
+if st.session_state.second:       
     st.image([game.dealer.hand[0].image, Card.flipped(str(game.dealer.hand[1]))], width=card_width)
     st.image([card.image for card in game.human.hand], width=card_width)        
     if game.check_score()[0] <= 21:
         stand = st.button("stand") 
         hit = st.button("hit")
         if hit:
-           game.third_turn(True)
+           game.human.hand_draw(game.deck)
                 
 
 

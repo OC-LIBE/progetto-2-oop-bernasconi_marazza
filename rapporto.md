@@ -25,3 +25,7 @@ Abbiamo completato la parte di codice del gioco e riusciamo a giocare attraverso
 # 26.02
 ## Lidia Bernasconi
 Abbiamo messo a posto la grafica della funzione per puntare in streamlit, in modo che il giocatore sceglie quanto puntare inserendolo nella pagina streamlit e la sua puntata viene salvata nel game dove la si può trovare quando serve nel gioco. Adesso stiamo lavorando sul display delle carte.
+
+# 12.03
+##  Samuele Marazza
+Oggi abbiamo sviluppato ulteriormente l'intefaccia grafica, dando le carte e sviluppando i pulsanti hit e stand, e riuscendo a dare una carta girata al dealer. Dobbiamo ancora fare la parte finale del gioco però siamo a buon punto.
