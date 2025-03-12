@@ -16,16 +16,16 @@ card_width=95
 
 
 if "game" not in st.session_state:
-    game = st.session_state["game"] = True
-if st.session_state.game:
-    game = Game()    
-    game.deck.shuffle()
+    game = st.session_state.game = Game()
 
+game.deck.shuffle()
 
 if "playing" not in st.session_state:
         st.session_state["playing"] = False
 if "starting" not in st.session_state:
     st.session_state.starting = True
+if "second" not in st.session_state:
+   st.session_state.second = False
 
 if st.session_state.starting:
     start = st.button("Start")
@@ -43,11 +43,23 @@ if st.session_state["playing"]:
         st.write("Hai puntato " + str(game.bet))
         st.write(game.human.money, game.bet)
         st.session_state["playing"] = False
-        game.second_turn()
-    if game.human.hand.len() != 0:
-        st.image(for card in game.human.hand.card, width=card_width)
-    
+        st.session_state.second = True
+        
+if st.session_state.second: 
+    st.session_state.second = False       
+    game.second_turn()
+    st.image([game.dealer.hand[0].image, Card.flipped(str(game.dealer.hand[1]))], width=card_width)
+    st.image([card.image for card in game.human.hand], width=card_width)        
+    if game.check_score()[0] <= 21:
+        stand = st.button("stand") 
+        hit = st.button("hit")
+        if hit:
+           game.third_turn(True)
+                
+
+
 st.write(st.session_state)
 home = st.button("Home", use_container_width= True)
 if home:
     st.switch_page("home.py")
+    
