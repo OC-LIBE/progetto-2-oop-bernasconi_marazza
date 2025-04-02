@@ -51,17 +51,38 @@ if st.session_state["playing"]:
         st.session_state.second = True
         game.second_turn()
 
+if "fourth" not in st.session_state:
+                st.session_state.fourth = None
+
 if st.session_state.second:       
-    st.image([game.dealer.hand[0].image, Card.flipped(str(game.dealer.hand[1]))], width=card_width)
+    if st.session_state.fourth == False:
+         st.image([card.image for card in game.dealer.hand], width=card_width)
+    elif st.session_state.fourth == None:
+        st.image([game.dealer.hand[0].image, Card.flipped(str(game.dealer.hand[1]))], width=card_width)
     st.image([card.image for card in game.human.hand], width=card_width)        
+    
     if game.check_score()[0] <= 21:
         stand = st.button("stand") 
         hit = st.button("hit")
         if hit:
-           game.human.hand_draw(game.deck)
-                
+            game.human.hand_draw(game.deck)
+            st.rerun()
+        if stand:
+            st.session_state.fourth = True
+    else:
+         st.session_state.fourth = True
 
-
+if st.session_state.fourth:
+     game.fourth_turn()
+     st.session_state.fourth = False
+     game.check_win()
+     game.ritorno()
+     st.write(f"Hai ora " + str(game.human.money))
+     resetg = st.button("Gioca Ancora")
+     st.rerun()
+     if resetg:
+          game.reset()
+          st.session_state["playing"] = True
 st.write(st.session_state)
 home = st.button("Home", use_container_width= True)
 if home:
