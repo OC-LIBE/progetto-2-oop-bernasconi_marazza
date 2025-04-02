@@ -29,3 +29,7 @@ Abbiamo messo a posto la grafica della funzione per puntare in streamlit, in mod
 # 12.03
 ##  Samuele Marazza
 Oggi abbiamo sviluppato ulteriormente l'intefaccia grafica, dando le carte e sviluppando i pulsanti hit e stand, e riuscendo a dare una carta girata al dealer. Dobbiamo ancora fare la parte finale del gioco però siamo a buon punto.
+
+# 02.04
+## Lidia Bernasconi
+Oggi abbiamo continuato a sviluppare l'interfaccia grafica. Abbiamo fatto funzionare i bottoni per pescare o decidere di non pescare. Quando il giocatore sfora o decide di non pescare il dealer fa il suo turno e la carta sua girata diventa visibile. Non funziona bene quando il giocatore decide di non pescare perché non ti mostra i soldi che perdi. Anche la funzione per resettare il gioco non funziona a livello di interfaccia.
