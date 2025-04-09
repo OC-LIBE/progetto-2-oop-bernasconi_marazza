@@ -10,6 +10,7 @@ class Game:
         self.win = win
         self.pari = pari
         self.bet = bet
+    
     def humandeal(self):
         cards = self.deck.draw()
         self.human.hand.append(cards)
@@ -119,3 +120,4 @@ class Game:
         print(self.human.money)
         print(self.check_score())
         self.reset()
+        

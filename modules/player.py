@@ -37,5 +37,5 @@ class Dealer(Player):
         for i in self.hand:
             score1 += i[0]
             score2 += i[1]
-        while score1 < 17 and score2 <17:
+        while score1 < 17 or score2 <17:
             self.hand.append(deck.draw())

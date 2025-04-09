@@ -33,3 +33,5 @@ Oggi abbiamo sviluppato ulteriormente l'intefaccia grafica, dando le carte e svi
 # 02.04
 ## Lidia Bernasconi
 Oggi abbiamo continuato a sviluppare l'interfaccia grafica. Abbiamo fatto funzionare i bottoni per pescare o decidere di non pescare. Quando il giocatore sfora o decide di non pescare il dealer fa il suo turno e la carta sua girata diventa visibile. Non funziona bene quando il giocatore decide di non pescare perché non ti mostra i soldi che perdi. Anche la funzione per resettare il gioco non funziona a livello di interfaccia.
+
+base 64 setbackground

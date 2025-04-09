@@ -1,6 +1,5 @@
 import streamlit as st
 
-
 st.header("BLACK JACK")
 
 st.subheader("Regole del gioco:")
