@@ -78,11 +78,12 @@ if st.session_state.fourth:
      game.check_win()
      game.ritorno()
      st.write(f"Hai ora " + str(game.human.money))
-     resetg = st.button("Gioca Ancora")
-     st.rerun()
-     if resetg:
+     resetgame = st.button("Gioca Ancora")
+     if resetgame:
           game.reset()
+          st.session_state.second = False
           st.session_state["playing"] = True
+          st.rerun()
 st.write(st.session_state)
 home = st.button("Home", use_container_width= True)
 if home:
